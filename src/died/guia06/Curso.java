@@ -1,7 +1,10 @@
 package died.guia06;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.swing.JOptionPane;
 
 import died.guia06.util.Registro;
 
@@ -45,8 +48,13 @@ public class Curso {
 	 * @param a
 	 * @return
 	 */
-	public Boolean inscribir(Alumno a) {
-		log.registrar(this, "inscribir ",a.toString());
+	public Boolean inscribir(Alumno a) throws IOException {
+		try {
+			log.registrar(this, "inscribir ",a.toString());	
+		}catch(IOException e) {
+			JOptionPane.showMessageDialog(null, "Ha ocurrido un error");
+		}
+		
 		return false;
 	}
 	
@@ -54,8 +62,13 @@ public class Curso {
 	/**
 	 * imprime los inscriptos en orden alfabetico
 	 */
-	public void imprimirInscriptos() {
-		log.registrar(this, "imprimir listado",this.inscriptos.size()+ " registros ");
+	public void imprimirInscriptos() throws IOException {
+		try {
+			log.registrar(this, "imprimir listado",this.inscriptos.size()+ " registros ");
+		}catch(IOException e) {
+			JOptionPane.showMessageDialog(null, "Ha ocurrido un error");
+		}
+		
 	}
 
 
