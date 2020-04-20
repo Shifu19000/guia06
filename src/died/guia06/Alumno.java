@@ -12,6 +12,22 @@ public class Alumno implements Comparable{
 	private List<Curso> cursando;
 	private List<Curso> aprobados;
 
+	public Alumno() {
+		
+	}
+	public void setearAlumno(String nombreAlumno, Integer libreta) {
+		this.nombre = nombreAlumno;
+		this.nroLibreta = libreta;
+	}
+	
+	public String nombreAlumno() {
+		return this.nombre;
+	}
+	
+	public Integer libretaAlumno() {
+		return this.nroLibreta;
+	}
+	
 	public int creditosObtenidos() {
 		int creditos = 0;
 		for(Curso c:aprobados){
@@ -48,8 +64,8 @@ public class Alumno implements Comparable{
 	}
 	
 	@Override
-	public boolean CompararPorNombre(String nombre1) {
-		if(nombre1.equals(this.nombre)) {
+	public boolean compararPorNombre(String nombre1) {
+		if(this.nombre.equals(nombre1)) {
 			JOptionPane.showMessageDialog(null, "Son el mismo alumno");
 			return true;
 		}

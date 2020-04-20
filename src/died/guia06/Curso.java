@@ -34,6 +34,10 @@ public class Curso {
 		this.log = new Registro();
 	}
 	
+	public void DefinirCreditosSiAprueba(Integer creditoss) {
+		this.creditos = creditoss;
+	}
+	
 	public int CreditosSiAprobó() {
 		return creditos;
 	}
