@@ -34,7 +34,17 @@ public class Curso {
 		this.log = new Registro();
 	}
 	
-
+	public int CreditosSiAprob�() {
+		return creditos;
+	}
+	
+	public boolean HayCupo(){
+		int aux = inscriptos.size();
+		if(aux < this.cupo) {
+			return true;
+		}
+		return false;
+	}
 	/**
 	 * Este método, verifica si el alumno se puede inscribir y si es así lo agrega al curso,
 	 * agrega el curso a la lista de cursos en los que está inscripto el alumno y retorna verdadero.
