@@ -15,6 +15,26 @@ public class Alumno implements Comparable{
 	public Alumno() {
 		
 	}
+	
+	public List<Curso> cursosSegunCL(Integer cl){
+		int cursosCL = 0;
+		for(Curso c:cursando) {
+			if(c.NroCicloLectivo().equals(cl)) {
+				cursosCL += 1;
+			}
+		}
+		
+		if(cursosCL < 2) {
+			return cursando;
+		}
+		return null;
+	}
+	
+	public void inscribirCurso(Curso c) {
+		cursando.add(c);
+	}
+	
+	
 	public void setearAlumno(String nombreAlumno, Integer libreta) {
 		this.nombre = nombreAlumno;
 		this.nroLibreta = libreta;
@@ -28,8 +48,8 @@ public class Alumno implements Comparable{
 		return this.nroLibreta;
 	}
 	
-	public int creditosObtenidos() {
-		int creditos = 0;
+	public Integer creditosObtenidos() {
+		Integer creditos = 0;
 		for(Curso c:aprobados){
 			creditos += c.CreditosSiAprobó();
 		}
